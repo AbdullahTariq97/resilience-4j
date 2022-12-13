@@ -1,0 +1,6 @@
+The the circuit breaker is in closed state, the calls to the downstream will be made.
+Since there is a Thread.sleep in the supplied being decorated with the circuit breaker, the requests made when circuit breaker
+is in open state will experience significantly highly response times on postman
+
+When the circuit breaker is in open state, the calls to the downstream will be blocked.
+The .get() method will not internally call the supplier that makes call to the downstream, instead it will throw a CallNotPermittedException
